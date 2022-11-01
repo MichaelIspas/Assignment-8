@@ -24,7 +24,8 @@ int main () {
 
     showlist();  
   
-    cout << "Input 1 to manually select an agent or input 0 to randomly select an agent." << endl << endl;
+    cout << "Input 1 to manually select an agent, input 0 to randomly select an agent or 2";
+    cout << " to view the agent list." << endl << endl;
     cin >> option;
   
     if(option == 1){      
