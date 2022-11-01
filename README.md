@@ -6,10 +6,14 @@ If the user decide to pick a new agent with either option, the 'currentagent' te
 
 *****INSTRUCTIONS*****
 
-Input 1 to manually type an agent name
+INPUT 1 to manually type an agent name
 
 OR
 
-INPUT 0 to randomly select an agent from 'agentlist' to update 'currentagent'.
+INPUT 0 to randomly select an agent from 'agentlist' to update 'currentagent'
+
+OR
+
+INPUT 2 to view the agent list
 
 If any other input beside 0 and 1 is input, the microservice will end.
