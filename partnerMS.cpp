@@ -64,6 +64,11 @@ int main () {
   
     return 0;
   }
+    
+    if (option == 2){
+    showlist();
+    return 0;
+  }
 }
 
 void showlist(){
