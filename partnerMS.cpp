@@ -24,47 +24,49 @@ int main () {
 
     showlist();  
   
-    cout << "Input 1 to randomly select an agent, 0 to view the list of agents, ";
-    cout << "or 2 to exit." << endl;
-    cin >> option;
-  
-    if(option == 1){     
-    ifstream agent_file("agentlist.txt");
-    int total_lines = 0;
-        while(getline(agent_file,line))
-        {
-        total_lines++; 
-        lines.push_back(line);  
-        }
+    do{
+        cout << "Input 1 to randomly select an agent, 0 to view the list of agents, ";
+        cout << "or 2 to exit." << endl;
+        cin >> option;
+        cout << endl;
+    
+        if(option == 1){     
+        ifstream agent_file("agentlist.txt");
+        int total_lines = 0;
+            while(getline(agent_file,line))
+            {
+            total_lines++; 
+            lines.push_back(line);  
+            }
    
-    int random_number=rand()%total_lines;
+        int random_number=rand()%total_lines;
 
     
-    cout << lines[random_number] << endl;
+        cout << lines[random_number] << endl;
 
-    curragent_file.open("currentagent.txt", ios::out | ios::trunc);
-    curragent_file << lines[random_number];
-    curragent_file.close();
-  
-    return 0;
-  } 
+        curragent_file.open("currentagent.txt", ios::out | ios::trunc);
+        curragent_file << lines[random_number];
+        curragent_file.close();
+
+        cout << endl;
+        } 
     
-  
-    if(option == 0) {
+        else if(option == 0) {
         cout << endl;
         showlist();
-        return 0;
+        }
+
+        else if (option == 2){
+        }
+        
+        else {
+            cout << "Invalid input. Please try again." << endl << endl;
+        }
+
     }
+    while(option != 2);  
     
-    
-    if (option == 2){
-    exit(0);
-    }
-    
-    else {
-        cout << "Invalid input. Please try again." << endl;
-        return 0;
-    }
+    return 0;
 }
 
 void showlist(){
