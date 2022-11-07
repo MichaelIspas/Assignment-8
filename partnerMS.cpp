@@ -24,35 +24,18 @@ int main () {
 
     showlist();  
   
-    cout << "Input 1 to manually select an agent, input 0 to randomly select an agent or 2";
-    cout << " to view the agent list." << endl << endl;
+    cout << "Input 1 to randomly select an agent, 0 to view the list of agents, ";
+    cout << "or 2 to exit." << endl;
     cin >> option;
   
-    if(option == 1){      
-    cout << "Enter agent name" << endl;
-    cin >> userAnswer;
-
-    curragent_file.open("currentagent.txt", ios::out | ios::trunc);
-    curragent_file.close();
-
-    this_thread::sleep_for(chrono::seconds(3));
-
-    ofstream curragent_file("currentagent.txt");
-    curragent_file << userAnswer;
-    curragent_file.close();
-
-    cout << "Agent selected: " << userAnswer << endl;
-    return 0;
-    }
-  
-    if(option == 0) {
+    if(option == 1){     
     ifstream agent_file("agentlist.txt");
     int total_lines = 0;
-    while(getline(agent_file,line))
-    {
+        while(getline(agent_file,line))
+        {
         total_lines++; 
         lines.push_back(line);  
-    }
+        }
    
     int random_number=rand()%total_lines;
 
@@ -64,12 +47,24 @@ int main () {
     curragent_file.close();
   
     return 0;
-  }
+  } 
+    
+  
+    if(option == 0) {
+        cout << endl;
+        showlist();
+        return 0;
+    }
+    
     
     if (option == 2){
-    showlist();
-    return 0;
-  }
+    exit(0);
+    }
+    
+    else {
+        cout << "Invalid input. Please try again." << endl;
+        return 0;
+    }
 }
 
 void showlist(){
