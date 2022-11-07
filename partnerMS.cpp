@@ -2,10 +2,7 @@
 #include <fstream>
 #include <string>
 #include <stdlib.h>
-#include <time.h>
 #include <vector>
-#include <chrono>
-#include <thread>
 
 using namespace std;
 
@@ -58,7 +55,7 @@ int main () {
 
         else if (option == 2){
         }
-        
+
         else {
             cout << "Invalid input. Please try again." << endl << endl;
         }
