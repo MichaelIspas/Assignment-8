@@ -1,6 +1,6 @@
-Fade   
+Fade
 Neon   
-Chamber   
+Chamber
 Skye
 Yoru
 Astra
@@ -16,4 +16,4 @@ Cypher
 Sova
 Omen
 Reyna
-Killjoy   
+Killjoy
